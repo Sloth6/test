@@ -65,19 +65,17 @@ def stats(update, context):
 
 def start(update, context):
     buttons = ButtonMaker()
-    buttons.buildbutton("Orginal Repo", "https://www.github.com/anasty17/mirror-leech-telegram-bot")
-    buttons.buildbutton("Report Group", "https://t.me/+PRRzqHd31XY3ZWZk")
-    buttons.buildbutton("My Repo", "https://github.com/shuvam-dawn/MLTB-Custom-UI")
-    buttons.buildbutton("Mirror Group", "https://t.me/z_mirror")
+    buttons.buildbutton("Useless Channel", "https://t.me/SlothTalks")
+    buttons.buildbutton("Our Group", "https://t.me/+E3voE7xF_r8zZjg1")
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         start_string = f'''
-Welcome | Z Mirror service is ready for you
+Hey there | Sloth mirror is ready to use
 Type /{BotCommands.HelpCommand} to get a list of available commands
 '''
         sendMarkup(start_string, context.bot, update.message, reply_markup)
     else:
-        sendMarkup('Sorry, You cannot use me', context.bot, update.message, reply_markup)
+        sendMarkup('Sorry, you aren't authorized yet. Join the group instead', context.bot, update.message, reply_markup)
 
 def restart(update, context):
     restart_message = sendMessage("Restarting...", context.bot, update.message)
@@ -173,7 +171,7 @@ help_string_telegraph = f'''<br>
 '''
 
 help = telegraph.create_page(
-        title='Z-Mirror-Bot Help',
+        title='Sloth-Mirror Help',
         content=help_string_telegraph,
     )["path"]
 
