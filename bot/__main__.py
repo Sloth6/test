@@ -65,8 +65,8 @@ def stats(update, context):
 
 def start(update, context):
     buttons = ButtonMaker()
-    buttons.buildbutton("Useless Channel", "https://t.me/SlothTalks")
-    buttons.buildbutton("Our Group", "https://t.me/+E3voE7xF_r8zZjg1")
+    buttons.buildbutton("Our Channel", "https://t.me/nokkiirunnoippokittum/3")
+    buttons.buildbutton("Our Group", "https://t.me/nokkiirunnoippokittum/2")
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         start_string = f'''
